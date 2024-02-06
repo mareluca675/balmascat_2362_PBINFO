@@ -1,0 +1,49 @@
+#include <fstream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    ifstream cin("balmascat.in");
+    ofstream cout("balmascat.out");
+
+    int m, n;
+
+    cin >> m >> n;
+
+    int inF = ceil((float) m / n);
+    int cod = inF % 10;
+    int cif = cod;
+
+    if(cif != 9){
+        cod ++;
+        cif ++;
+
+        cout << cif;
+
+        for(int i = 1; i < 2 * n - 1; i ++){
+            if(i % 2 == 1){
+                cout << cif - 1;
+            }
+            else{
+                cout << cif;
+            }
+        }
+    }
+    else{
+        cod --;
+        cif --;
+
+        cout << cif;
+
+        for(int i = 1; i < 2 * n - 1; i ++){
+            if(i % 2 == 1){
+                cout << cif + 1;
+            }
+            else{
+                cout << cif;
+            }
+        }
+    }
+}
